@@ -10,6 +10,19 @@ char **reconstruct_trip(Ticket **tickets, int length)
   char **route = malloc(length * sizeof(char *));
 
   // YOUR CODE HERE
+  // 2 separate for loops
+  // for (int j = 0; j < length; j ++) {
+  //   if (source[j] == NONE) {
+  //     route[0] = destination[j]
+  //   }
+  // }
+
+  // int r = 0;
+  // for loop through int i = 0; i < length; i++
+  //   if route[r] == source[i] {
+  //     route[r+1] = destination[i];
+  //     r++;
+  //   }
 
   return route;
 }

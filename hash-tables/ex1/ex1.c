@@ -6,11 +6,63 @@
 Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
   HashTable *ht = create_hash_table(16);
-
-  // YOUR CODE HERE
-
+  ht->capacity = length;
+  ht->storage = calloc(length, sizeof(LinkedPair*));
+  ht->storage[weights];
+  ht->storage[weights]->key = 
+  for (int i = 1; i < length; i++) {
+  // ONE LOOP
+  //   for (int i = 1; i < length; i++) {
+  //   int w = weights[i-1];
+  //   int comp_w = limit - w;
+  //   if (comp_w == weights[i]) {
+  //     if (weights[i] > comp_w) {
+  //       int index_1 = weights[i];
+  //       int index_2 = comp_w;
+  //     } else {
+  //       int index_1 = comp_w;
+  //       int index_2 = weights[i];
+  //     }
+  //     return [index_1, index_2];
+  //   }
+  // } 
+  // NESTED FOR LOOPS
+  // if (length < 2) {return NULL;};
+  // for (int i = 0; i < length - 1; i++) {
+  //   for (int j = i + 1; j< length; j++) {
+  //     if (weights[i] + weights[j] == limit) {
+  //       if (weights[i] > weights[j]) {
+  //         int index_1 = weights[i];
+  //         int index_2 = weights[j];
+  //         return *Answer(index_1, index_2);
+  //       } else {
+  //         int index_1 = weights[j];
+  //         int index_2 = weights[i];
+  //         return *(index_1, index_2);
+  //       }
+  //     }
+  //   }
+  // }
+  
   return NULL;
 }
+// input: int *weights = { 4, 6, 10, 15, 16 }, int length = 5, int limit = 21
+// output: Answer{ index_1: 3, index_2: 1 }  # since these are the indices of weights 15 and 6 whose sum equals 21
+// typedef struct LinkedPair {
+//   int key;
+//   int value;
+//   struct LinkedPair *next;
+// } LinkedPair;
+
+// typedef struct HashTable {
+//   int capacity;
+//   LinkedPair **storage;
+// } HashTable;
+
+// typdef struct Answer {
+//   int index_1;
+//   int index_2;
+// } Answer;
 
 void print_answer(Answer *answer)
 {
