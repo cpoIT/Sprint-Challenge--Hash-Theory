@@ -7,25 +7,31 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
   HashTable *ht = create_hash_table(16);
   ht->capacity = length;
-  ht->storage = calloc(length, sizeof(LinkedPair*));
-  ht->storage[weights];
-  ht->storage[weights]->key = 
-  for (int i = 1; i < length; i++) {
+  ht->storage = malloc(sizeof(int));
+  // ht->storage[weights];
+  // ht->storage[weights]->key = 
   // ONE LOOP
-  //   for (int i = 1; i < length; i++) {
-  //   int w = weights[i-1];
-  //   int comp_w = limit - w;
-  //   if (comp_w == weights[i]) {
-  //     if (weights[i] > comp_w) {
-  //       int index_1 = weights[i];
-  //       int index_2 = comp_w;
-  //     } else {
-  //       int index_1 = comp_w;
-  //       int index_2 = weights[i];
-  //     }
-  //     return [index_1, index_2];
-  //   }
-  // } 
+    for (int i = 1; i < length; i++) {
+    int w = weights[i-1];
+    int comp_w = limit - w;
+    if (comp_w == weights[i]) {
+      if (weights[i] > comp_w) {
+        int index_1 = weights[i];
+        int index_2 = comp_w;
+        ht->storage[0]->value = index_1;
+        ht->storage[1]->value = index_2;
+      } else {
+        int index_1 = comp_w;
+        int index_2 = weights[i];
+        ht->storage[0]->value = index_1;
+        ht->storage[1]->value = index_2;
+      }
+
+      // return [index_1, index_2];
+      
+    }
+    return ht->storage[2];
+  } 
   // NESTED FOR LOOPS
   // if (length < 2) {return NULL;};
   // for (int i = 0; i < length - 1; i++) {
