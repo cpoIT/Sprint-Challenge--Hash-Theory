@@ -19,7 +19,7 @@ char **reconstruct_trip(Ticket **tickets, int length)
 
   // int r = 0;
   // for loop through int i = 0; i < length; i++
-  //   if route[r] == source[i] {
+  //   if (route[r] == source[i]) {
   //     route[r+1] = destination[i];
   //     r++;
   //   }
